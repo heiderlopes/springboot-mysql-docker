@@ -11,6 +11,9 @@ public class Carro {
     private int id;
     private String nome;
     private String placa;
+    @ManyToOne(targetEntity = Categoria.class)
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
 
     public int getId() {
         return id;
@@ -34,5 +37,13 @@ public class Carro {
 
     public void setPlaca(String placa) {
         this.placa = placa;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }
